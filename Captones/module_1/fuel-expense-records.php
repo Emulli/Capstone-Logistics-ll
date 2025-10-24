@@ -167,7 +167,7 @@ $expenses = getFuelExpenses();
                                         <button class="px-3 py-1.5 bg-gray-200 text-gray-700 rounded-md text-xs font-semibold hover:bg-gray-300 transition-all inline-flex items-center gap-1.5" onclick="viewExpense(<?php echo $expense['id']; ?>)">
                                             <i class="fas fa-eye"></i> View
                                         </button>
-                                        <button class="px-3 py-1.5 bg-blue-500 text-white rounded-md text-xs font-semibold hover:bg-blue-600 transition-all inline-flex items-center gap-1.5" onclick="editExpense(<?php echo $expense['id']; ?>)">
+                                        <button class="px-3 py-1.5 bg-green-500 text-white rounded-md text-xs font-semibold hover:bg-green-600 transition-all inline-flex items-center gap-1.5" onclick="editExpense(<?php echo $expense['id']; ?>)">
                                             <i class="fas fa-edit"></i> Edit
                                         </button>
                                     </div>
