@@ -77,34 +77,35 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
             </div>
         </div>
 
-        <!-- Driver Management Module -->
-        <div class="mb-2">
-            <div class="nav-item text-white/80 px-5 py-3 flex items-center justify-between cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo in_array($current_page, ['driver-list', 'license-management', 'performance-tracking', 'schedules']) ? 'bg-white/10' : ''; ?>" onclick="toggleModule('driver')">
-                <div class="flex items-center gap-3">
-                    <i class="fas fa-id-card"></i>
-                    <span class="font-semibold">Driver Management</span>
+        <!-- Vehicle Reservation & Dispatch System (VRDS) - Module 2 -->
+            <div class="mb-2">
+                <div class="nav-item text-white/80 px-5 py-3 flex items-center justify-between cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo in_array($current_page, ['dispatch-assignment', 'reservation-management', 'availability-calendar']) ? 'bg-white/10' : ''; ?>" onclick="toggleModule('vrds')">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-calendar-check"></i>
+                        <span class="font-semibold">Reservation & Dispatch</span>
+                    </div>
+                    <i class="fas fa-chevron-down transition-transform duration-300 <?php echo in_array($current_page, ['dispatch-assignment', 'reservation-management', 'availability-calendar']) ? 'rotate-180' : ''; ?>" id="vrds-icon"></i>
                 </div>
-                <i class="fas fa-chevron-down transition-transform duration-300 <?php echo in_array($current_page, ['driver-list', 'license-management', 'performance-tracking', 'schedules']) ? 'rotate-180' : ''; ?>" id="driver-icon"></i>
+                <div class="<?php echo in_array($current_page, ['dispatch-assignment', 'reservation-management', 'availability-calendar']) ? '' : 'hidden'; ?> bg-white/5 overflow-hidden transition-all duration-300" id="vrds-submenu">
+                    <!-- PAGE #7 -->
+                    <a href="/CAPTONES/module_2/dispatch-assignment.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'dispatch-assignment' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
+                        <i class="fas fa-clipboard-list text-sm"></i>
+                        <span class="text-sm">Dispatch & Assignment</span>
+                    </a>
+                    
+                    <!-- PAGE #8 -->
+                    <a href="/CAPTONES/module_2/reservation-management.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'reservation-management' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
+                        <i class="fas fa-tasks text-sm"></i>
+                        <span class="text-sm">Reservation Management</span>
+                    </a>
+                    
+                    <!-- PAGE #9 -->
+                    <a href="/CAPTONES/module_2/availability-calendar.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'availability-calendar' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
+                        <i class="fas fa-calendar-alt text-sm"></i>
+                        <span class="text-sm">Availability Calendar</span>
+                    </a>
+                </div>
             </div>
-            <div class="<?php echo in_array($current_page, ['driver-list', 'license-management', 'performance-tracking', 'schedules']) ? '' : 'hidden'; ?> bg-white/5 overflow-hidden transition-all duration-300" id="driver-submenu">
-                <a href="/CAPTONES/module_2/driver-list.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'driver-list' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
-                    <i class="fas fa-users text-sm"></i>
-                    <span class="text-sm">Driver List</span>
-                </a>
-                <a href="/CAPTONES/module_2/license-management.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'license-management' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
-                    <i class="fas fa-id-badge text-sm"></i>
-                    <span class="text-sm">License Management</span>
-                </a>
-                <a href="/CAPTONES/module_2/performance-tracking.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'performance-tracking' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
-                    <i class="fas fa-chart-line text-sm"></i>
-                    <span class="text-sm">Performance Tracking</span>
-                </a>
-                <a href="/CAPTONES/module_2/schedules.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'schedules' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
-                    <i class="fas fa-calendar-alt text-sm"></i>
-                    <span class="text-sm">Schedules</span>
-                </a>
-            </div>
-        </div>
 
         <!-- Operations & Logistics Module -->
         <div class="mb-2">
