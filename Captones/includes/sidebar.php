@@ -107,89 +107,55 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
                 </div>
             </div>
 
-        <!-- Operations & Logistics Module -->
-        <div class="mb-2">
-            <div class="nav-item text-white/80 px-5 py-3 flex items-center justify-between cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo in_array($current_page, ['shipments', 'routes-planning', 'deliveries', 'warehouse']) ? 'bg-white/10' : ''; ?>" onclick="toggleModule('operations')">
-                <div class="flex items-center gap-3">
-                    <i class="fas fa-box"></i>
-                    <span class="font-semibold">Operations & Logistics</span>
+        <!-- Driver and Trip Performance Monitoring - Module 3 -->
+            <div class="mb-2">
+                <div class="nav-item text-white/80 px-5 py-3 flex items-center justify-between cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo in_array($current_page, ['behavior-analytics', 'incident-management', 'driver-profiles', 'trip-performance']) ? 'bg-white/10' : ''; ?>" onclick="toggleModule('performance')">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-user-check"></i>
+                        <span class="font-semibold">Performance Monitoring</span>
+                    </div>
+                    <i class="fas fa-chevron-down transition-transform duration-300 <?php echo in_array($current_page, ['behavior-analytics', 'incident-management', 'driver-profiles', 'trip-performance']) ? 'rotate-180' : ''; ?>" id="performance-icon"></i>
                 </div>
-                <i class="fas fa-chevron-down transition-transform duration-300 <?php echo in_array($current_page, ['shipments', 'routes-planning', 'deliveries', 'warehouse']) ? 'rotate-180' : ''; ?>" id="operations-icon"></i>
+                <div class="<?php echo in_array($current_page, ['behavior-analytics', 'incident-management', 'driver-profiles', 'trip-performance']) ? '' : 'hidden'; ?> bg-white/5 overflow-hidden transition-all duration-300" id="performance-submenu">
+                    <!-- PAGE #10 -->
+                    <a href="/CAPTONES/module_3/behavior-analytics.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'behavior-analytics' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
+                        <i class="fas fa-chart-line text-sm"></i>
+                        <span class="text-sm">Behavior Analytics</span>
+                    </a>
+                    
+                    <!-- PAGE #11 -->
+                    <a href="/CAPTONES/module_3/incident-management.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'incident-management' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
+                        <i class="fas fa-exclamation-triangle text-sm"></i>
+                        <span class="text-sm">Incident Management</span>
+                    </a>
+                    
+                    <!-- PAGE #12 -->
+                    <a href="/CAPTONES/module_3/driver-profiles.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'driver-profiles' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
+                        <i class="fas fa-id-card-alt text-sm"></i>
+                        <span class="text-sm">Driver Profiles</span>
+                    </a>
+                    
+                    <!-- PAGE #13 -->
+                    <a href="/CAPTONES/module_3/trip-performance.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'trip-performance' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
+                        <i class="fas fa-route text-sm"></i>
+                        <span class="text-sm">Trip Performance</span>
+                    </a>
+                </div>
             </div>
-            <div class="<?php echo in_array($current_page, ['shipments', 'routes-planning', 'deliveries', 'warehouse']) ? '' : 'hidden'; ?> bg-white/5 overflow-hidden transition-all duration-300" id="operations-submenu">
-                <a href="/CAPTONES/module_3/shipments.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'shipments' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
-                    <i class="fas fa-shipping-fast text-sm"></i>
-                    <span class="text-sm">Shipments</span>
-                </a>
-                <a href="/CAPTONES/module_3/routes-planning.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'routes-planning' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
-                    <i class="fas fa-route text-sm"></i>
-                    <span class="text-sm">Routes Planning</span>
-                </a>
-                <a href="/CAPTONES/module_3/deliveries.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'deliveries' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
-                    <i class="fas fa-truck-loading text-sm"></i>
-                    <span class="text-sm">Deliveries</span>
-                </a>
-                <a href="/CAPTONES/module_3/warehouse.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'warehouse' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
-                    <i class="fas fa-warehouse text-sm"></i>
-                    <span class="text-sm">Warehouse</span>
-                </a>
-            </div>
-        </div>
 
-        <!-- Reports & Analytics Module -->
+        <!-- TRANSPORT COST ANALYSIS & OPTIMIZATION -->
         <div class="mb-2">
             <div class="nav-item text-white/80 px-5 py-3 flex items-center justify-between cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo in_array($current_page, ['fleet-reports', 'financial-reports', 'analytics-dashboard', 'export-data']) ? 'bg-white/10' : ''; ?>" onclick="toggleModule('reports')">
                 <div class="flex items-center gap-3">
                     <i class="fas fa-chart-bar"></i>
-                    <span class="font-semibold">Reports & Analytics</span>
+                    <span class="font-semibold">Transport Cost Analysis & Optimization</span>
                 </div>
                 <i class="fas fa-chevron-down transition-transform duration-300 <?php echo in_array($current_page, ['fleet-reports', 'financial-reports', 'analytics-dashboard', 'export-data']) ? 'rotate-180' : ''; ?>" id="reports-icon"></i>
             </div>
             <div class="<?php echo in_array($current_page, ['fleet-reports', 'financial-reports', 'analytics-dashboard', 'export-data']) ? '' : 'hidden'; ?> bg-white/5 overflow-hidden transition-all duration-300" id="reports-submenu">
-                <a href="/CAPTONES/module_4/fleet-reports.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'fleet-reports' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
+                <a href="/CAPTONES/module_4/transport-cost-optimization.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'fleet-reports' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
                     <i class="fas fa-file-alt text-sm"></i>
-                    <span class="text-sm">Fleet Reports</span>
-                </a>
-                <a href="/CAPTONES/module_4/financial-reports.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'financial-reports' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
-                    <i class="fas fa-dollar-sign text-sm"></i>
-                    <span class="text-sm">Financial Reports</span>
-                </a>
-                <a href="/CAPTONES/module_4/analytics-dashboard.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'analytics-dashboard' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
-                    <i class="fas fa-chart-pie text-sm"></i>
-                    <span class="text-sm">Analytics Dashboard</span>
-                </a>
-                <a href="/CAPTONES/module_4/export-data.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'export-data' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
-                    <i class="fas fa-download text-sm"></i>
-                    <span class="text-sm">Export Data</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- Settings & Configuration Module -->
-        <div class="mb-2">
-            <div class="nav-item text-white/80 px-5 py-3 flex items-center justify-between cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo in_array($current_page, ['system-settings', 'user-management', 'permissions', 'notifications']) ? 'bg-white/10' : ''; ?>" onclick="toggleModule('settings')">
-                <div class="flex items-center gap-3">
-                    <i class="fas fa-cog"></i>
-                    <span class="font-semibold">Settings & Configuration</span>
-                </div>
-                <i class="fas fa-chevron-down transition-transform duration-300 <?php echo in_array($current_page, ['system-settings', 'user-management', 'permissions', 'notifications']) ? 'rotate-180' : ''; ?>" id="settings-icon"></i>
-            </div>
-            <div class="<?php echo in_array($current_page, ['system-settings', 'user-management', 'permissions', 'notifications']) ? '' : 'hidden'; ?> bg-white/5 overflow-hidden transition-all duration-300" id="settings-submenu">
-                <a href="/CAPTONES/module_5/system-settings.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'system-settings' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
-                    <i class="fas fa-sliders-h text-sm"></i>
-                    <span class="text-sm">System Settings</span>
-                </a>
-                <a href="/CAPTONES/module_5/user-management.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'user-management' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
-                    <i class="fas fa-user-cog text-sm"></i>
-                    <span class="text-sm">User Management</span>
-                </a>
-                <a href="/CAPTONES/module_5/permissions.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'permissions' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
-                    <i class="fas fa-shield-alt text-sm"></i>
-                    <span class="text-sm">Permissions</span>
-                </a>
-                <a href="/CAPTONES/module_5/notifications.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'notifications' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
-                    <i class="fas fa-bell text-sm"></i>
-                    <span class="text-sm">Notifications</span>
+                    <span class="text-sm">Transport Cost & Optimization</span>
                 </a>
             </div>
         </div>

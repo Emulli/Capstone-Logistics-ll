@@ -35,9 +35,7 @@ $vehicles = getVehicles();
 
         <!-- Page Content -->
         <main class="p-6">
-            <!-- Page Header -->
             <div class="mb-8">
-                <h2 class="text-3xl font-bold text-gray-900">Vehicle Registry</h2>
                 <p class="text-gray-600 mt-2">Manage all registered vehicles in your fleet</p>
             </div>
 

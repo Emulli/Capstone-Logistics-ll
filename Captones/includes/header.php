@@ -89,22 +89,11 @@ document.addEventListener('DOMContentLoaded', function() {
         'dispatch-assignment': 'Dispatch & Assignment Dashboard',
         'reservation-management': 'Reservation Management',
         'availability-calendar': 'Availability Calendar',
-        'driver-list': 'Driver List',
-        'license-management': 'License Management',
-        'performance-tracking': 'Performance Tracking',
-        'schedules': 'Schedules',
-        'shipments': 'Shipments',
-        'routes-planning': 'Routes Planning',
-        'deliveries': 'Deliveries',
-        'warehouse': 'Warehouse',
-        'fleet-reports': 'Fleet Reports',
-        'financial-reports': 'Financial Reports',
-        'analytics-dashboard': 'Analytics Dashboard',
-        'export-data': 'Export Data',
-        'system-settings': 'System Settings',
-        'user-management': 'User Management',
-        'permissions': 'Permissions',
-        'notifications': 'Notifications'
+        'behavior-analytics': 'Behavior Analytics',
+        'incident-management': 'Incident Case Management',
+        'driver-profiles': 'Driver Profiles',
+        'trip-performance': 'Trip Performance Reports',
+        'transport-cost-optimization': 'Transport Cost & Optimization Dashboard',
     };
     
     // Get current page name from URL
