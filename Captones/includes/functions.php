@@ -627,4 +627,102 @@ function getOptimizationInsights() {
         ],
     ];
 }
+
+function getNotifications() {
+    return [
+        [
+            'id' => 1,
+            'type' => 'maintenance',
+            'title' => 'Maintenance Due',
+            'message' => 'Vehicle ABC-1234 requires oil change within 3 days',
+            'time' => '5 minutes ago',
+            'read' => false,
+            'icon' => 'fa-wrench',
+            'color' => 'yellow',
+            'link' => '/CAPTONES/module_1/maintenance-tracker.php'
+        ],
+        [
+            'id' => 2,
+            'type' => 'incident',
+            'title' => 'New Incident Reported',
+            'message' => 'Driver Mike Johnson reported a minor collision',
+            'time' => '1 hour ago',
+            'read' => false,
+            'icon' => 'fa-exclamation-triangle',
+            'color' => 'red',
+            'link' => '/CAPTONES/module_3/incident-case-management.php'
+        ],
+        [
+            'id' => 3,
+            'type' => 'approval',
+            'title' => 'Pending Approval',
+            'message' => '2 maintenance requests waiting for your approval',
+            'time' => '2 hours ago',
+            'read' => false,
+            'icon' => 'fa-clipboard-check',
+            'color' => 'blue',
+            'link' => '/CAPTONES/module_1/maintenance-approvals.php'
+        ],
+        [
+            'id' => 4,
+            'type' => 'trip',
+            'title' => 'Trip Completed',
+            'message' => 'Trip TRP-2024-015 completed successfully',
+            'time' => '3 hours ago',
+            'read' => true,
+            'icon' => 'fa-check-circle',
+            'color' => 'green',
+            'link' => '/CAPTONES/module_3/trip-performance.php'
+        ],
+        [
+            'id' => 5,
+            'type' => 'fuel',
+            'title' => 'High Fuel Consumption',
+            'message' => 'Vehicle GHI-3456 showing 25% higher consumption',
+            'time' => '5 hours ago',
+            'read' => true,
+            'icon' => 'fa-gas-pump',
+            'color' => 'red',
+            'link' => '/CAPTONES/module_4/transport-cost-optimization.php'
+        ],
+        [
+            'id' => 6,
+            'type' => 'compliance',
+            'title' => 'License Expiring Soon',
+            'message' => 'Vehicle registration for XYZ-5678 expires in 15 days',
+            'time' => '1 day ago',
+            'read' => true,
+            'icon' => 'fa-file-contract',
+            'color' => 'yellow',
+            'link' => '/CAPTONES/module_1/compliance-licensing.php'
+        ],
+        [
+            'id' => 7,
+            'type' => 'driver',
+            'title' => 'Driver Performance Alert',
+            'message' => 'Driver training recommended for 3 drivers',
+            'time' => '1 day ago',
+            'read' => true,
+            'icon' => 'fa-user-check',
+            'color' => 'blue',
+            'link' => '/CAPTONES/module_3/driver-profiles.php'
+        ],
+        [
+            'id' => 8,
+            'type' => 'reservation',
+            'title' => 'New Reservation',
+            'message' => 'Vehicle reservation request for tomorrow',
+            'time' => '2 days ago',
+            'read' => true,
+            'icon' => 'fa-calendar-check',
+            'color' => 'green',
+            'link' => '/CAPTONES/module_2/reservation-management.php'
+        ],
+    ];
+}
+
+function getUnreadNotificationCount() {
+    $notifications = getNotifications();
+    return count(array_filter($notifications, fn($n) => !$n['read']));
+}
 ?>

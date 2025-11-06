@@ -150,9 +150,9 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
                     <i class="fas fa-chart-bar"></i>
                     <span class="font-semibold">Transport Cost Analysis & Optimization</span>
                 </div>
-                <i class="fas fa-chevron-down transition-transform duration-300 <?php echo in_array($current_page, ['fleet-reports', 'financial-reports', 'analytics-dashboard', 'export-data']) ? 'rotate-180' : ''; ?>" id="reports-icon"></i>
+                <i class="fas fa-chevron-down transition-transform duration-300 <?php echo in_array($current_page, ['transport-cost-optimization']) ? 'rotate-180' : ''; ?>" id="reports-icon"></i>
             </div>
-            <div class="<?php echo in_array($current_page, ['fleet-reports', 'financial-reports', 'analytics-dashboard', 'export-data']) ? '' : 'hidden'; ?> bg-white/5 overflow-hidden transition-all duration-300" id="reports-submenu">
+            <div class="<?php echo in_array($current_page, ['transport-cost-optimization']) ? '' : 'hidden'; ?> bg-white/5 overflow-hidden transition-all duration-300" id="reports-submenu">
                 <a href="/CAPTONES/module_4/transport-cost-optimization.php" class="nav-item text-white/70 px-5 py-2.5 pl-14 flex items-center gap-3 cursor-pointer transition-all duration-300 border-l-3 border-transparent hover:bg-white/10 hover:text-white <?php echo $current_page === 'fleet-reports' ? 'bg-white/15 border-l-white text-white' : ''; ?>">
                     <i class="fas fa-file-alt text-sm"></i>
                     <span class="text-sm">Transport Cost & Optimization</span>
@@ -166,8 +166,8 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
                 <i class="fas fa-headset text-white text-2xl mb-2"></i>
                 <div class="text-white text-sm font-semibold">Need Help?</div>
                 <div class="text-white text-opacity-70 text-xs mt-1">Contact support team</div>
-                <button class="w-full mt-3 px-4 py-2 bg-white bg-opacity-20 text-white rounded-md text-sm font-semibold hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center gap-2" onclick="contactSupport()">
-                    <i class="fas fa-envelope"></i> Contact
+                <button class="w-full mt-3 px-4 py-2 bg-white bg-opacity-20 text-white rounded-md text-sm font-semibold hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center gap-2" onclick="window.location.href='/CAPTONES/contact-support.php'">
+                     <i class="fas fa-envelope"></i> Contact
                 </button>
             </div>
         </div>
